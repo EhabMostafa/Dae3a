@@ -9,4 +9,8 @@ public class UserModel extends PesronModel {
     private Bitmap nationalImage;
     private boolean isVerified;
     private ArrayList<UserModel> LosersCommunication;
+
+    public void setNationalID(String nationalID) {
+        NationalID = nationalID;
+    }
 }
