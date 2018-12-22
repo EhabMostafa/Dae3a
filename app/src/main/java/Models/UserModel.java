@@ -33,6 +33,9 @@ public class UserModel extends PesronModel {
        this.nationalImage=NationaID_IMG;
        this.isVerified=true;
        this.isAdmin=false;
-
+    }
+  
+    public void setNationalID(String nationalID) {
+        NationalID = nationalID;
     }
 }
