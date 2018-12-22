@@ -23,4 +23,15 @@ public class PostDAO {
         CON.Close();
         return models_arr;
     }
+    public int addPost(PostModel post) throws SQLException {
+        ConnectionMySql con=new ConnectionMySql();
+        con.Open();
+        PostService service=new PostService();
+        service.con=con.connection;
+        int id=service.insertPost(post);
+        con.Close();
+        return id;
+
+    }
+
 }
