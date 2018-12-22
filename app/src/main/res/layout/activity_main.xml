@@ -37,9 +37,9 @@
             android:layout_height="wrap_content"
             android:textSize="25sp"
             android:text="Login"
-
+            android:onClick="login"
             />
-        <!-- android:onClick="login" -->
+        <!--  -->
 
     </LinearLayout>
 </RelativeLayout>

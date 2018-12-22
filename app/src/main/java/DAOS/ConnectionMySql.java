@@ -13,7 +13,7 @@ import java.sql.Statement;
 class ConnectionMySql {
     String className = "com.mysql.jdbc.Driver";
 
-    String url = "jdbc:mysql://192.168.137.1/ehab";         //localhost and database name
+    String url = "jdbc:mysql://192.168.137.1/dae3a";         //localhost and database name
     String MySQL_userName = "ehab";                         //DataBase Username
     String MySQL_Password = "111";                          //DataBase Password for this user name
 
@@ -28,7 +28,7 @@ class ConnectionMySql {
 
         try {
             System.out.println();
-            System.out.println("helllo ehab");
+
             Class.forName(className);
 
             connection = DriverManager.getConnection(url, MySQL_userName, MySQL_Password);

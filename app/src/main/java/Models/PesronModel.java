@@ -1,10 +1,32 @@
 package Models;
 
-public class PesronModel {
+public  class PesronModel {
     private int ID;
-    private String fullName;
-    private String email;
-    private String password;
-    private boolean isAdmin;
-    private String phone;
+    protected String fullName;
+    protected String email;
+    protected String password;
+    protected boolean isAdmin;
+    protected String phone;
+
+    public boolean isAdmin() {
+        return isAdmin;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public String getPassword() {
+        return password;
+
+    }
+
+    public String getFullName() {
+
+        return fullName;
+    }
+
+    public String getEmail() {
+        return email;
+    }
 }
