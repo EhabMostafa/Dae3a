@@ -1,26 +1,24 @@
 package Controller;
 
+import java.sql.SQLException;
 import java.util.Date;
 
 import DAOS.MatchDao;
 import Models.MatchModel;
 
 public class MatchController {
-    public String addMatch(String additionalInformation, String address, Date foundedDate, int postID, boolean isOrg)
-    {
+
+    public String addMatch(String additionalInformation, String address, Date foundedDate, int postID) throws SQLException {
         MatchModel matchModel = new MatchModel();
-        matchModel.setAdditionalInformation(additionalInformation);
-        matchModel.setAddress(address);
-        matchModel.setFoundedDate(foundedDate);
-        matchModel.setOrg(true);
+
+        matchModel.setMatchModel(additionalInformation,address,foundedDate,postID);
+
+
         MatchDao matchDao=new MatchDao();
-        matchDao.postID=postID;
+
         String addMessage=matchDao.addMatch(matchModel);
-        if(addMessage.equals("successfully inserted"))
-        {
-            return "successfullty insert wait for verification";
-        }
-        return "faild inserted";
+
+        return addMessage;
 
     }
 }

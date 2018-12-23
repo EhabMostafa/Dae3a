@@ -1,7 +1,10 @@
 package Services;
 
+import android.graphics.Bitmap;
 import android.util.Log;
 
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -44,9 +47,16 @@ public class UserService {
 
 
     public void AddUser(UserModel Um) throws SQLException {
-        String Q="insert into person (`fullName`, `email`, `password`, `phoneNumber`, `nationalID`, `IsVerified`, `IsAdmin`) VALUES ( '"+Um.getFullName()+"','"+Um.getEmail()+"','"+Um.getPassword()+"','"+Um.getPhone()+"','"+Um.getNationalID()+"',"+Um.isVerified()+","+Um.isAdmin()+")";
+
+        ByteArrayOutputStream STREAM=new ByteArrayOutputStream();
+        Um.getNationalImage().compress(Bitmap.CompressFormat.JPEG,90,STREAM);
+        byte[] inbyte=STREAM.toByteArray();
+        ByteArrayInputStream in=new ByteArrayInputStream(inbyte);
+
+        String Q="insert into person (`fullName`, `email`, `password`, `phoneNumber`, `nationalID`, `IsVerified`, `IsAdmin`,`nationalIdImage`) VALUES ( '"+Um.getFullName()+"','"+Um.getEmail()+"','"+Um.getPassword()+"','"+Um.getPhone()+"','"+Um.getNationalID()+"',"+Um.isVerified()+","+Um.isAdmin()+",?)";
         Log.e("Query", Q);
         PreparedStatement ps=con.prepareStatement(Q);
+        ps.setBinaryStream(1,in);
         ps.executeUpdate();
     }
 }

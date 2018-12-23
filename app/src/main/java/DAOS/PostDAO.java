@@ -23,6 +23,7 @@ public class PostDAO {
         CON.Close();
         return models_arr;
     }
+
     public int addPost(PostModel post) throws SQLException {
         ConnectionMySql con=new ConnectionMySql();
         con.Open();

@@ -12,25 +12,42 @@ public class PostModel {
     private boolean isAdded;
     private boolean isEdited;
     private Bitmap postImage;
-    CategoryModel category;
-    UserModel user;
+    CategoryModel category=new CategoryModel();
+    UserModel user=new UserModel();
 
-    public void setpostmodel(int ID,String title,String description,
-                            Date postDate,boolean isAdded, boolean isEdited,
-                            CategoryModel category,UserModel user,Bitmap postImage)
+    public void setPostModel(String title,String description,Date postDate,Bitmap postImage,String UserEmail)
     {
-        this.ID=ID;
         this.title=title;
         this.description=description;
         this.postDate=postDate;
-        this.isAdded=isAdded;
-        this.isEdited=isEdited;
         this.postImage=postImage;
-        this.category=category;
-        this.user=user;
+
+        this.isAdded=true;
+        this.isEdited=true;
+
+        this.category.setID(1);;
+        this.user.setEmail(UserEmail);
+
     }
-    public Bitmap getPostImage() {
-        return postImage;
+
+    public void setID(int ID) {
+        this.ID = ID;
+    }
+
+    public int getID() {
+        return ID;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public Date getPostDate() {
+        return postDate;
     }
 
     public boolean isAdded() {
@@ -41,65 +58,15 @@ public class PostModel {
         return isEdited;
     }
 
+    public Bitmap getPostImage() {
+        return postImage;
+    }
+
     public CategoryModel getCategory() {
         return category;
-    }
-
-    public Date getPostDate() {
-        return postDate;
-    }
-
-    public int getID() {
-        return ID;
-    }
-
-    public String getDescription() {
-        return description;
-    }
-
-    public String getTitle() {
-        return title;
     }
 
     public UserModel getUser() {
         return user;
     }
-
-    public void setAdded(boolean added) {
-        isAdded = added;
-    }
-
-    public void setCategory(CategoryModel category) {
-        this.category = category;
-    }
-
-    public void setDescription(String description) {
-        this.description = description;
-    }
-
-    public void setEdited(boolean edited) {
-        isEdited = edited;
-    }
-
-    public void setID(int ID) {
-        this.ID = ID;
-    }
-
-    public void setPostDate(Date postDate) {
-        this.postDate = postDate;
-    }
-
-    public void setPostImage(Bitmap postImage) {
-        this.postImage = postImage;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public void setUser(UserModel user) {
-        this.user = user;
-    }
-
-
 }

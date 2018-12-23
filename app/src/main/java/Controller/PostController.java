@@ -3,7 +3,12 @@ package Controller;
 import android.graphics.Bitmap;
 
 import java.sql.SQLException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 
 import DAOS.PostDAO;
 import Models.CategoryModel;
@@ -17,15 +22,17 @@ public class PostController {
         models_arr = postdao.getAllPostsInCategories(selected_Cat_model);
         return  models_arr;
     }
-    public void addPost(Bitmap itemImage, String title, String description) throws SQLException {
+    public int addPost(Bitmap itemImage, String title, String description,String UserEmail) throws SQLException {
         PostModel post=new PostModel();
-        post.setTitle(title);
-        post.setPostImage(itemImage);
-        post.setDescription(description);
-        post.setAdded(true);
-        post.setID(userID);
-        post.setEdited(true);
-        PostDAO d=new PostDAO();
-        d.addPost(post);
+
+        DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd");
+        Calendar cal = Calendar.getInstance();
+        System.out.println();
+
+
+        post.setPostModel(title,description,new Date(),itemImage,UserEmail);
+
+        PostDAO PoDAO=new PostDAO();
+        return PoDAO.addPost(post);
     }
 }

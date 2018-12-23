@@ -6,103 +6,89 @@
     android:layout_height="match_parent"
     tools:context=".RegisterActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_margin="10dp"
+        android:padding="10dp"
+        >
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="125dp"
-        android:layout_height="33dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="155dp"
-        android:layout_marginLeft="155dp"
-        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
         android:text="Register"
-        tools:layout_editor_absoluteX="103dp"
-        tools:layout_editor_absoluteY="176dp" />
+         />
 
     <EditText
-        android:id="@+id/editText"
-        android:layout_width="wrap_content"
+        android:id="@+id/FirstName"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="71dp"
-        android:ems="10"
+        android:textSize="25sp"
         android:inputType="textPersonName"
         android:text="FirstName" />
 
     <EditText
-        android:id="@+id/editText2"
-        android:layout_width="wrap_content"
+        android:id="@+id/LastName"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="128dp"
-        android:ems="10"
+        android:textSize="25sp"
         android:inputType="textPersonName"
         android:text="LastName" />
 
     <EditText
-        android:id="@+id/editText3"
-        android:layout_width="wrap_content"
+        android:id="@+id/Email"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="202dp"
-        android:ems="10"
-        android:inputType="textEmailAddress"
+        android:textSize="25sp"
+        android:inputType="text"
         tools:text="Email" />
 
     <EditText
-        android:id="@+id/editText4"
-        android:layout_width="wrap_content"
+        android:id="@+id/Password"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="193dp"
-        android:ems="10"
+        android:textSize="25sp"
         android:inputType="textPassword"
         android:text="Password" />
 
     <EditText
-        android:id="@+id/editText5"
-        android:layout_width="wrap_content"
+        android:id="@+id/PhoneNumber"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="127dp"
-        android:ems="10"
+        android:textSize="25sp"
         android:inputType="phone"
         android:text="PhoneNumber" />
 
     <EditText
-        android:id="@+id/editText6"
-        android:layout_width="wrap_content"
+        android:id="@+id/NationalID"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="57dp"
-        android:ems="10"
+        android:textSize="25sp"
         android:inputType="number"
         android:text="NationalID" />
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="28dp"
-        android:layout_marginRight="28dp"
-        android:text="Next" />
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="25sp"
+            android:text="National-ID Image"
+            android:onClick="UploadImage"
+            />
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
+
+        <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:text="NationaID Image" />
+        android:textSize="25sp"
+        android:text="Submit"
+        android:onClick="Submit"
+            />
+
+
+    </LinearLayout>
 </RelativeLayout>

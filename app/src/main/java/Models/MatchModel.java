@@ -2,58 +2,48 @@ package Models;
 
 import java.util.Date;
 
+import DAOS.PostDAO;
+
 public class MatchModel {
     private int ID;
     private String address;
     private Date foundedDate;
     private String additional_information;
     private boolean IsOrg;
-    private PesronModel person;
-    public void setID(int ID)
-    {
-        this.ID=ID;
-    }
-    public int getID()
-    {
-        return ID;
-    }
-    public void setAddress(String address)
-    {
-        this.address=address;
-    }
-    public String getAddress()
-    {
-        return address;
-    }
-    public void setFoundedDate(Date foundedDate)
-    {
-        this.foundedDate=foundedDate;
-    }
-    public Date getFoundedDate()
-    {
-        return foundedDate;
-    }
-    public void setAdditionalInformation(String additional_information)
-    {
+    private UserModel user=new UserModel();
+    private PostModel post=new PostModel();
+
+
+
+    public void setMatchModel(String additional_information,String address,Date foundedDate,int postID){
         this.additional_information=additional_information;
-    }
-    public String getAdditionalInformation()
-    {
-        return additional_information;
-    }
-    public void setPerson(PesronModel person)
-    {
-        this.person=person;
-    }
-    public PesronModel getPerson() {
-        return person;
+        this.address=address;
+        this.foundedDate=foundedDate;
+        this.IsOrg=true;
+        this.post.setID(postID);
     }
 
-    public void setOrg(boolean org) {
-        IsOrg = org;
+    public int getID() {
+        return ID;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public Date getFoundedDate() {
+        return foundedDate;
+    }
+
+    public String getAdditional_information() {
+        return additional_information;
     }
 
     public boolean isOrg() {
         return IsOrg;
+    }
+
+    public PostModel getPost() {
+        return post;
     }
 }
