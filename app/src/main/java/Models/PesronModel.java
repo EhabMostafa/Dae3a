@@ -1,12 +1,15 @@
 package Models;
 
 public  class PesronModel {
-    private int ID;
     protected String fullName;
     protected String email;
     protected String password;
     protected boolean isAdmin;
     protected String phone;
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
     public boolean isAdmin() {
         return isAdmin;

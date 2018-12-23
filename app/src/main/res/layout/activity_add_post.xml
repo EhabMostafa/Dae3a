@@ -12,55 +12,64 @@
         android:layout_margin="10dp"
         android:padding="10dp"
         >
+        <TextView
+            android:id="@+id/lableImage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="25sp"
+            android:text="add lost thing:"
+            tools:layout_editor_absoluteX="62dp"
+            tools:layout_editor_absoluteY="207dp" />
+
         <EditText
             android:id="@+id/title"
-            android:layout_width="210dp"
-            android:layout_height="49dp"
-            android:ems="10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="25sp"
             android:inputType="textPersonName"
             android:text="Title"
             tools:layout_editor_absoluteX="52dp"
             tools:layout_editor_absoluteY="16dp" />
         <EditText
             android:id="@+id/description"
-            android:layout_width="249dp"
-            android:layout_height="101dp"
-            android:ems="10"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="25sp"
             android:hint="Description"
             android:inputType="textLongMessage|textPersonName"
             android:text="Description"
             tools:layout_editor_absoluteX="52dp"
             tools:layout_editor_absoluteY="75dp" />
-        <TextView
-            android:id="@+id/lableImage"
-            android:layout_width="98dp"
-            android:layout_height="wrap_content"
-            android:text="add lost thing:"
-            tools:layout_editor_absoluteX="62dp"
-            tools:layout_editor_absoluteY="207dp" />
+
+
     <Button
         android:id="@+id/button"
-        android:layout_width="133dp"
-        android:layout_height="37dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
         android:text="Upload Image"
+        android:onClick="UploadPostImage"
         tools:layout_editor_absoluteX="171dp"
-        tools:layout_editor_absoluteY="199dp" />
+        tools:layout_editor_absoluteY="199dp"
+        />
 
 
 
 
         <TextView
             android:id="@+id/lableMatch"
-            android:layout_width="158dp"
-            android:layout_height="27dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="25sp"
             android:text="add Match item:"
             tools:layout_editor_absoluteX="27dp"
             tools:layout_editor_absoluteY="268dp" />
 
     <EditText
         android:id="@+id/address"
-        android:layout_width="271dp"
-        android:layout_height="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
         android:ems="10"
         android:inputType="textPostalAddress"
         android:text="enter address of founded thing"
@@ -69,8 +78,9 @@
 
     <EditText
         android:id="@+id/founded_date"
-        android:layout_width="273dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:textSize="25sp"
         android:ems="10"
         android:inputType="date"
         android:text="founded Date"
@@ -78,9 +88,10 @@
         tools:layout_editor_absoluteY="364dp" />
 
     <EditText
-        android:id="@+id/editText7"
-        android:layout_width="273dp"
-        android:layout_height="40dp"
+        android:id="@+id/additional"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="25sp"
         android:ems="10"
         android:inputType="textLongMessage"
         android:text="additional information"
@@ -89,10 +100,13 @@
 
         <Button
             android:id="@+id/submit"
-            android:layout_width="129dp"
-            android:layout_height="37dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="25sp"
             android:text="Post"
+            android:onClick="Post"
             tools:layout_editor_absoluteX="249dp"
-            tools:layout_editor_absoluteY="461dp" />
+            tools:layout_editor_absoluteY="461dp"
+            />
     </LinearLayout>
 </RelativeLayout>

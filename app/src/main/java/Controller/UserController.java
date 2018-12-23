@@ -8,12 +8,16 @@ import DAOS.UserDAO;
 import Models.UserModel;
 
 public class UserController {
+
     UserDAO UD=new UserDAO();
     String Message="";
     boolean res=true;
     UserModel UM=new UserModel();
+
     public String  Register(String FullName, String Email, String Password, String PhoneNumber, String NationalID, Bitmap NationaID_IMG) throws SQLException {
+
         UM.SetData(FullName,Email,Password,PhoneNumber,NationalID,NationaID_IMG);
+
         try {
            res= UD.CheckNotExist(UM);
         } catch (SQLException e) {
